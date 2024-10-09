@@ -2,32 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.title {
+  @apply text-[30px] font-bold lg:text-[37px] xl:text-[45px];
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.subtitle {
+  @apply text-[27px] font-semibold lg:text-[30px] xl:text-[35px];
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.link-hover {
+  @apply w-full py-4 text-center font-semibold text-[20px] text-marron shadow-md transition duration-200 hover:bg-marron hover:text-white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.parrafo {
+  @apply text-sm tracking-[1px] leading-6 lg:text-[17px] lg:py-3 xl:text-[20px] xl:w-[80%] xl:leading-7 xl:tracking-[0.7px];
+}
+
+.category-image {
+  @apply relative w-full h-[270px]  xl:w-[350px] xl:h-[300px];
+}
+
+.container-category-text-button {
+  @apply absolute inset-0 flex flex-col gap-3 items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity;
+}
+
+.container-category-text {
+  @apply text-white font-bold uppercase text-[20px] opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
+.container-category-button {
+  @apply border-[1px] border-solid px-6 py-2 text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
+.card-cafe-category-country {
+  @apply px-2 py-1  text-white rounded-lg font-semibold text-sm;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
